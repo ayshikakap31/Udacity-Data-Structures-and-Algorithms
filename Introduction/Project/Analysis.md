@@ -72,9 +72,9 @@
 
 \- \*\*Algorithm\*\*: Iterate through all call records to extract the area or service codes of numbers called by Bangalore fixed-line users. Store the extracted codes in a list, compute the unique codes for display, and count the proportion of calls made to Bangalore fixed lines.
 
-\- \*\*Big O Notation\*\*: $O(n)$, where n is the number of call records in calls.
+\- \*\*Big O Notation\*\*: $O(n log n)$, where n is the number of call records in calls.
 
-\- \*\*Justification\*\*: Each call record is processed once, and all operations inside the loops: string prefix checks, fixed-length string parsing, list appends, and counting—run in constant time. Creating a set of called codes and counting Bangalore-to-Bangalore calls both take linear time relative to the number of call records, resulting in an overall linear time complexity.
+\- \*\*Justification\*\*: Each call record is processed once, and all operations inside the loops: string prefix checks, fixed-length string parsing, list appends, and counting—run in constant time. Then, it converts the list of called codes into a set and then sorts the unique codes before printing. Creating the set takes linear time, but sorting the unique codes requires O(u log u) time, where u is the number of unique codes (and u ≤ n). As a result, the sorting step dominates, and the overall time complexity becomes O(n log n). 
 
 
 
